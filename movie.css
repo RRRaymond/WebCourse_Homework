@@ -1,0 +1,110 @@
+body {
+    background-image: url("http://sse.tongji.edu.cn/liangshuang/wp/images/moviebg.png");
+    font: 10pt Arial, Helvetica, sans-serif;
+}
+
+#banner {
+    text-align: center;
+    background-image: url("http://sse.tongji.edu.cn/liangshuang/wp/images/rancidbannerbg.png");
+}
+h1{
+    text-align: center;
+    font: 24pt bold Georgia, "Times New Roman", Serif;
+    text-shadow: 3px 3px #999999;
+}
+#container{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px;
+    overflow: hidden;
+    background: #EEEEEE;
+}
+
+#leftSec{
+    width: 550px;
+    background-color: #EEEEEE;
+}
+#overview{
+    width: 250px;
+    float:right;
+    background: #A2B964;
+}
+
+#rotten{
+    background-image: url("http://sse.tongji.edu.cn/liangshuang/wp/images/rottenlargebg.png");
+    font: 48pt bold;
+    color: red;
+}
+
+#rotten img{
+    vertical-align: bottom;
+}
+
+#page{
+    clear: right;
+    background: #A2B964;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+
+#leftReviews{
+    width: 47%;
+    margin-right: 2%;
+    margin-left: 2%;
+    float: left;
+}
+
+#rightReviews{
+    width: 47%;
+    margin-left: 51%;
+    margin-right: 2%;
+}
+
+.review{
+    font-size: 10pt;
+    background: #EEEEEE;
+    border: 2px solid #CCCCCC;
+    border-radius: 20px;
+    font-family: Georgia, "Times New Roman", Serif;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.review img{
+    float: left;
+    margin-right: 5px;
+}
+
+.pInfo{
+    font-style: italic;
+    margin:20px 0 20px 0;
+    overflow: hidden;
+}
+
+.pInfo img{
+    margin-right: 5px;
+    float: left;
+}
+
+#overview dl{
+    padding:0 10pt 0 10pt;
+    font: 10pt Arial, Helvetica, sans-serif;
+}
+
+#overview dt{
+    font-weight: bolder;
+    margin-top: 10pt;
+}
+
+#overview ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#valid{
+    text-align: right;
+}
