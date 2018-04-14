@@ -1,0 +1,54 @@
+body{
+    background-color: #EAF6F6;
+    font-size: 12pt;
+    font-family: Garamondin;
+}
+
+h1{
+    text-align: center;
+}
+
+#container{
+    height: 100px;
+    width: 80%;
+    margin: 0 10% 0 10%;
+    background-color: #FFFFFF;
+    font-size: 36pt;
+    font-weight: bold;
+    font-style: initial;
+    font-family: monospace;
+    border: 2px solid #8EBEBE;
+    border-radius: 5px;
+    line-height: 100px;
+    text-align: center;
+}
+
+#controls{
+    text-align: center;
+}
+
+#controls label{
+    text-align: left;
+}
+
+#playcontrol{
+    float: left;
+}
+
+#sizecontrol{
+    float: left;
+}
+
+#speedcontrol{
+    float: left;
+}
+
+label{
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px solid #8EBEBE;
+}
+
+#input{
+    clear: left;
+}
