@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>SpeedReader</title>
     <link href="speedreader.css" rel="stylesheet" type="text/css"/>
+    <script src="speedreader.js"></script>
 </head>
 <body>
     <h1>SpeedReader</h1>
@@ -11,31 +12,37 @@
 
     </div>
     <div id="controls">
-        <div id="playcontrol">
-            <label>Play Controls</label>
-            <br/>
-            <button>Start</button>
-            <button>Stop</button>
-        </div>
-        <div id="speedcontrol">
-            <label>Speed</label>
-            <br/>
-            <select></select>
-        </div>
-        <div id="sizecontrol">
-            <label>Size</label>
-            <br/>
-            <input type="radio" name="sizeselect" value="medium" id="1"/>
-            <label for="1">Medium</label>
-            <input type="radio" name="sizeselect" value="big" id="2"/>
-            <label for="2">Big</label>
-            <input type="radio" name="sizeselect" value="bigger" id="3"/>
-            <label for="3">Bigger</label>
+        <div id="first3">
+            <div>
+                <label>Play Controls</label>
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+            </div>
+            <div>
+                <label>Speed</label>
+                <select id="speedSelect">
+                    <option value ="300">200 wpm</option>
+                    <option value ="200">300 wpm</option>
+                    <option value ="171">350 wpm</option>
+                    <option value ="150">400 wpm</option>
+                    <option value ="133">450 wpm</option>
+                    <option value ="120">500 wpm</option>
+                </select>
+            </div>
+            <div>
+                <label>Size</label>
+                <input type="radio" name="sizeselect" value="medium" id="1" checked="checked"/>
+                <label for="1" class="radiolabel">Medium</label>
+                <input type="radio" name="sizeselect" value="big" id="2"/>
+                <label for="2" class="radiolabel">Big</label>
+                <input type="radio" name="sizeselect" value="bigger" id="3"/>
+                <label for="3" class="radiolabel">Bigger</label>
+            </div>
         </div>
         <div id="input">
-            <label>Input Text</label>
+            <label for="inputtext">Input Text</label>
             <br/>
-            <input type="text"/>
+            <textarea id="inputtext" rows="10" cols="80"></textarea>
         </div>
     </div>
 </body>

@@ -27,28 +27,50 @@ h1{
     text-align: center;
 }
 
-#controls label{
-    text-align: left;
+#first3{
+    width: 75%;
+    margin: 0 auto 0 auto;
 }
 
-#playcontrol{
+#first3 div{
     float: left;
-}
-
-#sizecontrol{
-    float: left;
-}
-
-#speedcontrol{
-    float: left;
+    margin-left: 15%;
+    padding: 10px;
+    vertical-align: top;
 }
 
 label{
     font-weight: bold;
     text-align: left;
     border-bottom: 1px solid #8EBEBE;
+    display: block;
+    margin-bottom: 2px;
+}
+
+
+.radiolabel{
+    border: none;
+    display: inline;
 }
 
 #input{
     clear: left;
+    width: 82%;
+    margin: 0 auto 0 auto;
+}
+
+textarea{
+    border: solid 1px gray;
+    background: #FFFFFF;
+
+}
+
+button{
+    background: white;
+    width: 70px;
+    border: solid gray 1px;
+}
+
+button:disabled{
+    background: lightgray;
 }
