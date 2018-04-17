@@ -16,13 +16,17 @@ window.onload = function(){
 }
 
 function startAnimation() {
+    index = 0;
     var inputtext = document.getElementById("inputtext");
+    document.getElementById("stop").disabled = false;
+    document.getElementById("start").disabled = true;
+    document.getElementById("inputtext").disabled = true;
     if(inputtext.value==""){
         alert("请先输入文本");
         return;
     }
     text = inputtext.value.split(/[ \t\n]+/);
-    var pattern = new RegExp("[`':;',‘；：”“'。，、！？,.!?]+");
+    var pattern = new RegExp("[,`':;',‘；：”“'。，、！？,.!?（）()]+", 'g');
     for(var i=0;i<text.length;i++){
         if(text[i].match(pattern)){
             text[i] = text[i].replace(pattern,"");
@@ -37,22 +41,23 @@ function startAnimation() {
     timer = setInterval(play, deltatime);
 }
 
-var temp;
+var index = 0;
 function play() {
+    if(index == text.length){
+        stopAnimation();
+        return;
+    }
     var container = document.getElementById("container");
-    if(temp==true) {
-        container.style.background = "black";
-        temp=false;
-    }
-    else{
-        container.style.background = "white";
-        temp=true;
-    }
+    container.innerText = text[index++];
 }
 
 function stopAnimation() {
     var container = document.getElementById("container");
     container.innerText = "";
+    clearInterval(timer);
+    document.getElementById("stop").disabled = true;
+    document.getElementById("start").disabled = false;
+    document.getElementById("inputtext").disabled = false;
 }
 
 function changesize() {
