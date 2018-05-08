@@ -8,7 +8,7 @@
  */
 
 
-"use strict"
+"use strict";
 
 window.onload=function (ev) {
     initPuzzle();
@@ -16,7 +16,7 @@ window.onload=function (ev) {
     empty_y = 4;
     checkMoveable();
     document.getElementById("shufflebutton").onclick = shuffle;
-}
+};
 
 
 //position for the empty square
@@ -25,7 +25,7 @@ var empty_x, empty_y;
 
 //initialize the puzzle
 function initPuzzle() {
-    var puzzleArea = document.getElementById("puzzlearea")
+    var puzzleArea = document.getElementById("puzzlearea");
     var x_pos = 0, y_pos = 0;
     for(var i=0;i<4;i++){
         x_pos=0;
@@ -60,6 +60,7 @@ function moveTile() {
     this.y_pos = temp_y;
     this.id = "square_"+temp_x+"_"+temp_y;
     checkMoveable();
+    setTimeout(checkSuccess,100);
 }
 
 
@@ -67,12 +68,14 @@ function moveTile() {
 function mouseIn() {
     this.style.color = "red";
     this.style.cursor = "pointer";
+    this.style.borderColor = "red";
 }
 
 //change style on mouse out
 function mouseOut() {
     this.style.color = "burlywood";
     this.style.cursor = "default";
+    this.style.borderColor = "black";
 }
 
 
@@ -85,7 +88,7 @@ function shuffle() {
         moveableTiles.push(getTileAt(empty_x+1, empty_y));
         moveableTiles.push(getTileAt(empty_x-1, empty_y));
         for(var j=0;j<moveableTiles.length;j++){
-            if(moveableTiles[j]==null){
+            if(moveableTiles[j]===null){
                 moveableTiles.splice(j,1);
                 j--;
             }
@@ -116,10 +119,24 @@ function checkMoveable() {
     moveableTiles.push(getTileAt(empty_x+1, empty_y));
     moveableTiles.push(getTileAt(empty_x-1, empty_y));
     for(var i=0;i<moveableTiles.length;i++){
-        if(moveableTiles[i] == null)
+        if(moveableTiles[i] === null) {
             continue;
+        }
         moveableTiles[i].onclick = moveTile;
         moveableTiles[i].onmouseover = mouseIn;
         moveableTiles[i].onmouseout = mouseOut;
+    }
+}
+
+function checkSuccess() {
+    var flag = true;
+    var children = document.getElementById("puzzlearea").children;
+    for(var i=0;i<children.length;i++){
+        if(children[i].innerText != (children[i].x_pos-1) * 4 + children[i].y_pos) {
+            flag = false;
+        }
+    }
+    if(flag === true) {
+        alert("You win! :]");
     }
 }
